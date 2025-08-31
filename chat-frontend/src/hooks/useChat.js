@@ -1,4 +1,5 @@
 // hooks/useChat.js
+// 테스트2
 import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import { getChatId } from "../utils/chatUtils";
 

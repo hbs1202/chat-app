@@ -5,6 +5,7 @@ const express = require("express");
 const router = express.Router();
 const userController = require("../controllers/userController");
 const orgController = require("../controllers/organizationController");
+const chatController = require("../controllers/chatController");
 
 // --- User 라우트 ---
 // POST /api/signup
@@ -28,5 +29,8 @@ router.get("/sites/:companyId", orgController.getBusinessSitesByCompany);
 router.get("/departments/:siteId", orgController.getDepartmentsBySite);
 
 router.get("/positions", orgController.getAllPositions);
+
+// POST /api/chat/room: 채팅방을 생성하거나 기존 채팅방을 찾는 요청
+router.post("/chat/room", chatController.findOrCreateChatRoom);
 
 module.exports = router;

@@ -1,7 +1,7 @@
 // src/components/Auth/LoginScreen.jsx
 import React, { useState, useEffect } from "react";
 import { MessageCircle } from "lucide-react";
-
+import { API_BASE_URL } from "../constants/config";
 const LoginScreen = ({
   handleLogin,
   handleSignup,
@@ -27,7 +27,7 @@ const LoginScreen = ({
     if (!isLoginView) {
       const fetchCompanies = async () => {
         try {
-          const response = await fetch("http://192.168.0.3:3001/api/companies");
+          const response = await fetch("${API_BASE_URL}/api/companies");
           if (!response.ok) throw new Error("서버 응답 오류");
           const data = await response.json();
           setCompanies(Array.isArray(data) ? data : []);
@@ -50,7 +50,7 @@ const LoginScreen = ({
       console.log("사업장 목록 요청 시작, 선택된 회사 ID:", selectedCompany);
       try {
         const response = await fetch(
-          `http://192.168.0.3:3001/api/sites/${selectedCompany}`
+          `${API_BASE_URL}/api/sites/${selectedCompany}`
         );
         if (!response.ok) throw new Error("서버 응답 오류");
         const data = await response.json();
@@ -83,7 +83,7 @@ const LoginScreen = ({
     const fetchDepartments = async () => {
       try {
         const response = await fetch(
-          `http://192.168.0.3:3001/api/departments/${selectedSite}`
+          `${API_BASE_URL}/api/departments/${selectedSite}`
         );
         if (!response.ok) throw new Error("서버 응답 오류");
         const data = await response.json();

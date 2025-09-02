@@ -115,7 +115,7 @@ function App() {
       <div
         className={`${
           selectedChat ? "hidden md:flex" : "flex"
-        } w-full md:w-1/4 lg:w-1/5 flex-col`}
+        } w-full md:w-1/4 lg:w-1/5 flex-col bg-white`}
       >
         <Sidebar
           currentUser={currentUser}
@@ -132,7 +132,11 @@ function App() {
         />
       </div>
 
-      <div className="w-full md:flex-1 flex flex-col">
+      <div
+        className={`${
+          selectedChat ? "flex" : "hidden md:flex"
+        } w-full md:flex-1 flex-col`}
+      >
         {selectedChat ? (
           <ChatWindow
             partnerDetails={partnerDetails}

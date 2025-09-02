@@ -1,7 +1,8 @@
 // constants/config.js
 
 // API 기본 URL
-export const API_BASE_URL = "";
+export const API_BASE_URL =
+  "https://port-0-chat-app-backend-mf2kf1v32721a909.sel5.cloudtype.app";
 
 // 소켓 연결 설정
 export const SOCKET_CONFIG = {

@@ -1,7 +1,7 @@
 // constants/config.js
 
 // API 기본 URL
-export const API_BASE_URL = "http://192.168.0.3:3001";
+export const API_BASE_URL = "";
 
 // 소켓 연결 설정
 export const SOCKET_CONFIG = {

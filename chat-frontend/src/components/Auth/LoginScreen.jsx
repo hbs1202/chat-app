@@ -1,7 +1,7 @@
 // src/components/Auth/LoginScreen.jsx
 import React, { useState, useEffect } from "react";
 import { MessageCircle } from "lucide-react";
-import { API_BASE_URL } from "../constants/config";
+import { API_BASE_URL } from "../../constants/config";
 const LoginScreen = ({
   handleLogin,
   handleSignup,
